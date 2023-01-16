@@ -88,10 +88,43 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+optionsarray = [];
+
+// Variables for the various prompts and confirms
+
+var lowercaseletters = confirm("Click Ok to select lowercase letters");
+
+  var uppercaseletters = confirm("Click Ok to select uppercase letters");
+
+  var lengthofpassword = prompt("How long do you want your passwprd?");
+
+  var numericchars = confirm("Click Ok to select numeric characters");
+
+  var specialchars = confirm("Click Ok to select special characters");
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  if (lowercaseletters) {
+    optionsarray = optionsarray.concat(lowerCasedCharacters)
+
+  }
+
+  if (uppercaseletters) {
+    optionsarray = optionsarray.concat(upperCasedCharacters)
+  }
+
+  if (numericchars) {
+    optionsarray = optionsarray.concat(numericCharacters)
+  }
+
+  if (specialchars) {
+    optionsarray = optionsarray.concat(specialCharacters)
+  }
+
+  console.log(optionsarray)
 }
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
