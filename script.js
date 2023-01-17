@@ -97,19 +97,27 @@ function getPasswordOptions() {
 
   // variables to prompt user for password
 
+  lengthofpassword = parseInt(prompt("How long do you want your password?"));
+
   var lowercaseletters = confirm("Click Ok to select lowercase letters");
 
   var uppercaseletters = confirm("Click Ok to select uppercase letters");
-
-  lengthofpassword = parseInt(prompt("How long do you want your password?"));
 
   var numericchars = confirm("Click Ok to select numeric characters");
 
   var specialchars = confirm("Click Ok to select special characters");
 
+  // case in which no character is chosen
+
   if (lowercaseletters == false && uppercaseletters == false && numericchars == false && specialchars == false){
     alert("you must select at least one character type!");
     getPasswordOptions()
+  }
+
+  if (10 > lengthofpassword || lengthofpassword > 64){
+    alert("Please choose a number between 10-64");
+    getPasswordOptions();
+
   }
 
   if (lowercaseletters) {
