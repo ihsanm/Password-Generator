@@ -97,7 +97,7 @@ function getPasswordOptions() {
 
   // variables to prompt user for password
 
-  lengthofpassword = parseInt(prompt("How long do you want your password?"));
+  lengthofpassword = parseInt(prompt("How long do you want your password? choose a number between 10-64"));
 
   var lowercaseletters = confirm("Click Ok to select lowercase letters");
 
@@ -114,11 +114,15 @@ function getPasswordOptions() {
     getPasswordOptions()
   }
 
+// condition for password length
+
   if (10 > lengthofpassword || lengthofpassword > 64){
     alert("Please choose a number between 10-64");
     getPasswordOptions();
 
   }
+
+  // adds characters to array if true
 
   if (lowercaseletters) {
     optionsarray = optionsarray.concat(lowerCasedCharacters)
