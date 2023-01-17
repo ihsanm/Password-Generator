@@ -95,6 +95,8 @@ var lengthofpassword = 0;
 // Function to prompt user for password options
 function getPasswordOptions() {
 
+  // variables to prompt user for password
+
   var lowercaseletters = confirm("Click Ok to select lowercase letters");
 
   var uppercaseletters = confirm("Click Ok to select uppercase letters");
@@ -104,6 +106,11 @@ function getPasswordOptions() {
   var numericchars = confirm("Click Ok to select numeric characters");
 
   var specialchars = confirm("Click Ok to select special characters");
+
+  if (lowercaseletters == false && uppercaseletters == false && numericchars == false && specialchars == false){
+    alert("you must select at least one character type!");
+    getPasswordOptions()
+  }
 
   if (lowercaseletters) {
     optionsarray = optionsarray.concat(lowerCasedCharacters)
